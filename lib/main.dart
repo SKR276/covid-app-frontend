@@ -1,3 +1,4 @@
+import 'package:covid_app/pages/menu.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -13,7 +14,9 @@ class Mainpage extends StatefulWidget {
 class _MainpageState extends State<Mainpage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return MaterialApp(
+      home: MenuPage(),
+    );
   }
 }
 
