@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:covid_app/models/patientModel.dart';
 import 'package:http/http.dart' as http;
 
 class PatientListApi
@@ -28,5 +29,17 @@ Future<dynamic> sendData(
     {
       throw Exception("Failed to add");
     }
+}
+Future<List<ViewList>> getData() async {
+  var client = http.Client();
+  var apiUrl = Uri.parse("http://localhost:3009/api/patients/patient_view");
+
+  var response = await client.get(apiUrl);
+  if (response.statusCode == 200) {
+    return viewListFromJson(response.body);
+  }
+  else {
+    return [];
+  }
 }
 }

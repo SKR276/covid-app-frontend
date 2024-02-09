@@ -1,4 +1,5 @@
 import 'package:covid_app/pages/add.dart';
+import 'package:covid_app/pages/view.dart';
 import 'package:flutter/material.dart';
 
 class MenuPage extends StatefulWidget {
@@ -44,6 +45,9 @@ class _MenuPageState extends State<MenuPage> {
                     )
                 ),
                 onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder:
+                  (context)=>ViewPage()
+                  ));
                 },
                 child: Text("View Patients"),),
             ),
